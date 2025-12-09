@@ -1,75 +1,88 @@
-Hardcore Auto-Reset Minecraft Server
+# Hardcore Auto-Reset Minecraft Server
 
 This project provides a small Python script that automatically deletes the world folder and restarts the Minecraft server whenever a player dies.
 
+---
 
-
-🚀 Server Start Command
+## 🚀 Server Start Command
 
 Example command to start a Minecraft server:
 
+```bash
 java -Xmx2G -jar xxx.jar nogui
+```
 
+---
 
+## 🧩 What the Script Does
 
-🧩 What the Script Does
+* Automatically launches your Minecraft server
+* Detects which OS you are using - Linux (bash) or Windows
+* Detects player deaths via server logs
+* Deletes the entire `world` folder on any player death
+* Restarts the server afterward
+* Provides a `stats` command to show all stored player deaths
 
-Automatically launches your Minecraft server
+---
 
-Detects player deaths via server logs
+## 📦 Installation & Usage
 
-Deletes the entire world folder on any player death
+### 1. Prepare Your Server
 
-Restarts the server afterward
+* Download a Minecraft server JAR
+* Copy your server launch command
 
-Provides a stats command to show all stored player deaths
+### 2. Set Up the Script
 
+1. Place the `hardcore.py` script inside your server directory
 
+2. Run it:
 
-📦 Installation & Usage
-1. Prepare Your Server
+   * Double-click it **or**
+   * Run via command line:
 
-Download a Minecraft server JAR
+     ```bash
+     python3 hardcore.py
+     ```
+3. The script will ask for the launch command
 
-Copy your server launch command.
+4. Let the script start the server once completely
 
-2. Set Up the Script
+5. Stop the server afterward
 
-Place the hardcore.py script inside your server directory.
+---
 
-Run it:
+## ❗ One-Time Initialization Step
 
-double click or python3 hardcore.py
+On the first startup, Minecraft generates the world — but **not** in hardcore mode.
+Therefore you must **manually delete the `world` folder once** before the hardcore loop can begin.
 
-Let the script start the server once completely.
+---
 
-Stop the server afterward.
+### 3. Edit Server Settings
 
+Hardcore mode will be set automatically.
 
+---
 
-❗ One-Time Initialization Step
-
-On the first startup, Minecraft generates the world but not in hardcore mode.
-Therefore you must manually delete the world folder once before the hardcore loop can begin.
-
-3. Edit Server Settings
-(hardcore will be set automatically)
-
-4. Start the Hardcore Loop
+### 4. Start the Hardcore Loop
 
 Run the script again.
 Your server will now automatically reset the world and restart whenever a player dies.
 
+---
 
-
-📊 Player Statistics
+## 📊 Player Statistics
 
 The script stores:
 
-Number of deaths per player
+* Number of deaths per player
 
-Use the console command:
+Type ingame:
 
+```
 stats
+```
 
-to display all collected player statistics at any time.
+to display all deaths.
+
